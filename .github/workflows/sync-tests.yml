@@ -24,10 +24,10 @@ jobs:
                   cache: 'pnpm'
 
             - name: Install dependencies
-              run: pnpm install
+              run: pnpm run ci
 
             - name: Run tests with JSON reporter
-              run: pnpm run test:json
+              run: pnpm test -- run --reporter=json --outputFile=test-results.json
               continue-on-error: true
 
             - name: Sync test results to Automaspec
