@@ -22,6 +22,6 @@ describe('Array Operations', () => {
 
     it('should return correct array length', () => {
         const numbers = [1, 2, 3, 4, 5]
-        expect(numbers).toHaveLength(5)
+        expect(numbers).toHaveLength(10)
     })
 })
