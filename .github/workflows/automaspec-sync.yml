@@ -24,7 +24,7 @@ jobs:
                   cache: 'pnpm'
 
             - name: Install dependencies
-              run: pnpm run ci
+              run: pnpm install
 
             - name: Run tests with JSON reporter
               run: pnpm test -- run --reporter=json --outputFile=test-results.json
