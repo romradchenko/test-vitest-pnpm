@@ -34,12 +34,15 @@ jobs:
       - name: Sync test results to Automaspec
         if: >-
           always() &&
-          secrets.AUTOMASPEC_WEBHOOK_URL != '' &&
-          secrets.AUTOMASPEC_API_KEY != '' &&
           hashFiles('test-results.json') != ''
         run: |
           if [ ! -s test-results.json ]; then
             echo "test-results.json missing/empty; skipping sync."
+            exit 0
+          fi
+
+          if [ -z "${{ secrets.AUTOMASPEC_WEBHOOK_URL }}" ] || [ -z "${{ secrets.AUTOMASPEC_API_KEY }}" ]; then
+            echo "Automaspec secrets missing; skipping sync."
             exit 0
           fi
 
