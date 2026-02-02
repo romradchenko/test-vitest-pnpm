@@ -34,7 +34,7 @@ Add these secrets to your repository (**Settings → Secrets and variables → A
 
 ### Step 3: Copy Workflow File
 
-Copy `.github/workflows/sync-tests.yml` to your project's `.github/workflows/` folder.
+Copy `.github/workflows/automaspec-sync.yml` to your project's `.github/workflows/` folder.
 
 ## Naming Tests to Match Requirements
 
